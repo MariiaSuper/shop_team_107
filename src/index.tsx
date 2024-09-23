@@ -1,5 +1,9 @@
 import './index.scss';
 import App from './App';
 import { createRoot } from 'react-dom/client';
+import { Root } from './Root';
 
-createRoot(document.getElementById('root') as HTMLDivElement).render(<App />);
+const container = document.getElementById('root') as HTMLDivElement;
+const root = createRoot(container);
+
+root.render(<Root />);
