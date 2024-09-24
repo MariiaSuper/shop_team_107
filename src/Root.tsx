@@ -6,7 +6,7 @@ import { store } from './store/store';
 
 export const Root = () => (
   <Provider store={store}>
-    <BrowserRouter basename={process.env.CREATE_REACT_APP_BASENAME}>
+    <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
