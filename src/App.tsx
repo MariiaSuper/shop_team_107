@@ -4,26 +4,56 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import TestComponent from './components/TestComponent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { PaletteColor } from '@mui/material/styles/createPalette';
+
+// 1. Define your custom palette
+declare module '@mui/material/styles' {
+  interface Palette {
+    button: PaletteColor;
+  }
+  interface PaletteOptions {
+    button?: {
+      hover?: string;
+      pressed?: string;
+      disabled?: string;
+    };
+  }
+}
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#027979'
+      main: '#027979',
+      light: '#fbffff'
     },
     secondary: {
-      main: '#dc004e'
+      main: '#dede1c'
     },
     success: {
-      main: '#4caf50'
+      main: '#8fe478'
     },
     error: {
-      main: '#f44336'
+      main: '#e6735f'
     },
     warning: {
-      main: '#ff9800'
+      main: '#fbd13e'
     },
     info: {
-      main: '#2196f3'
+      main: '#4599e7'
+    },
+    button: {
+      hover: '#ff5722',
+      pressed: '#013232',
+      disabled: '#c6d7d7'
+    },
+    grey: {
+      '600': '#1d1d1d',
+      '500': '#3d3d3d',
+      '400': '#5d5d5d',
+      '300': '#7d7d7d',
+      '200': '#9d9d9d',
+      '100': '#dcdcdc',
+      '50': 'fcfcfc'
     }
   }
 });

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Box, useTheme } from '@mui/material';
 
 const TestComponent: React.FC = () => {
   const [message, setMessage] = useState('');
+  const theme = useTheme();
 
   const handleButtonClick = (color: string) => {
     setMessage(`Button with ${color} color clicked!`);
@@ -18,7 +19,10 @@ const TestComponent: React.FC = () => {
           <Box>
             <Button
               variant="contained"
-              color="primary"
+              style={{
+                backgroundColor: theme.palette.button.main,
+                color: theme.palette.error.main
+              }}
               onClick={() => handleButtonClick('Primary')}
               sx={{ margin: 1 }}>
               Primary
