@@ -32,9 +32,9 @@ jobs:
         run: |
           export REPO_NAME=${GITHUB_REPOSITORY#*/}
           export PUBLIC_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}"
-          export CREATE_REACT_APP_BASENAME="${REPO_NAME}"
+          export REACT_APP_BASENAME="${REPO_NAME}"
           echo "PUBLIC_URL: $PUBLIC_URL"
-          echo "CREATE_REACT_APP_BASENAME: $CREATE_REACT_APP_BASENAME"
+          echo "REACT_APP_BASENAME: $REACT_APP_BASENAME"
           npm run build
 
       - name: Upload artifact
