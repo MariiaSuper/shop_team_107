@@ -30,12 +30,12 @@ jobs:
 
       - name: Build the React app
         run: |
+          export REPO_NAME=${GITHUB_REPOSITORY#*/}
+          export PUBLIC_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}"
+          export CREATE_REACT_APP_BASENAME="${REPO_NAME}"
           echo "PUBLIC_URL: $PUBLIC_URL"
           echo "CREATE_REACT_APP_BASENAME: $CREATE_REACT_APP_BASENAME"
           npm run build
-        env:
-          PUBLIC_URL: 'https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}'
-          CREATE_REACT_APP_BASENAME: '${GITHUB_REPOSITORY#*/}'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
