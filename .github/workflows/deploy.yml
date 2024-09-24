@@ -33,6 +33,12 @@ jobs:
         env:
           PUBLIC_URL: https://mariiasuper.github.io/shop_team_107
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: 'github-pages'
+          path: 'dist'
+
   deploy:
     needs: build
 
