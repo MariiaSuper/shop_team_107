@@ -1,3 +1,9 @@
+import Catalog from './Catalog/Catalog';
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <Catalog />
+    </div>
+  );
 };
