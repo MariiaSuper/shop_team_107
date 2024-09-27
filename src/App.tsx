@@ -1,13 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import './App.scss';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-// import TestComponent from './components/TestComponent';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { PaletteColor } from '@mui/material/styles/createPalette';
-// import IconExample from './components/IconExample';
+import { ThemeProvider } from '@emotion/react';
+import { createTheme, PaletteColor } from '@mui/material';
 
-// 1. Define your custom palette
 declare module '@mui/material/styles' {
   interface Palette {
     button: PaletteColor;
@@ -66,9 +62,6 @@ function App() {
         <Header />
         <Outlet />
         <Footer />
-
-        {/* <TestComponent />
-        <IconExample /> */}
       </div>
     </ThemeProvider>
   );
