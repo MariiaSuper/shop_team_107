@@ -1,1 +1,1 @@
-export const Others: React.FC = () => <div>Others Page</div>;
+export const OthersComponent: React.FC = () => <div>Others Page</div>;
