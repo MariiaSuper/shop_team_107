@@ -19,7 +19,7 @@ export const CarouselComponent = () => {
           alt="Електротехнічні рішення для вашого дому."
           className="carouselIcon"
         />
-        <p className={styles.carouselDescription}>Електротехнічні рішення для вашого дому.</p>
+        <p className={styles.carouselDescription}>Доставка по Україні.</p>
       </div>
       <Carousel />
     </Box>
