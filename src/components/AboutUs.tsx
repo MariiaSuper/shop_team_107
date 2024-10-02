@@ -31,7 +31,8 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
             component="div"
             sx={{
               cursor: 'pointer',
-              ml: '12px'
+              ml: '12px',
+              color: theme.palette.grey[600]
             }}>
             {title}
           </Typography>
@@ -39,7 +40,8 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
         <Typography
           variant="thirdText"
           sx={{
-            marginTop: '12px'
+            marginTop: '12px',
+            color: theme.palette.grey[400]
           }}>
           {description}
         </Typography>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Box, Link, useTheme } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Box, useTheme, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 type Article = {
@@ -15,23 +16,26 @@ const articles: Article[] = [
   {
     id: 1,
     title: 'Як підібрати акумулятор для генератора',
-    description: 'Навіщо потрібен акумулятор для генератора? Про останній мова не йде...',
+    description:
+      'Правильний вибір акумулятора для генератора є важливим кроком, який гарантує надійну та ефективну роботу пристрою.',
     timeToRead: '5 хвилин на прочитання',
     image: '/images/usefulArticlesImage1.png',
     route: '/article/1'
   },
   {
     id: 2,
-    title: 'Який генератор вибрати для дачі',
-    description: 'Генератор для дачі — це класика жанру...',
+    title: '5 порад як зекономити на використанні генератора',
+    description:
+      'Бензинові генератори — це ефективний спосіб забезпечити автономне електропостачання, але їх використання може стати досить витратним через вартість палива.',
     timeToRead: '10 хвилин на прочитання',
     image: '/images/usefulArticlesImage2.png',
     route: '/article/2'
   },
   {
     id: 3,
-    title: 'Як зекономити на бензиновому генераторі',
-    description: 'Енергозабезпечення з різних причин залишає бажати кращого...',
+    title: 'Як обрати генератор для квартири: основні поради',
+    description:
+      'Вибір генератора для дачі – важливе рішення, адже від цього залежить комфорт і можливістьповноцінного використання електроприладів під час відсутності централізованого електропостачання.',
     timeToRead: '7 хвилин на прочитання',
     image: '/images/useFulArticlesImage3.png',
     route: '/article/3'
@@ -49,7 +53,7 @@ const ArticleCard: React.FC<Article> = ({ title, description, timeToRead, image,
         cursor: 'pointer',
         maxWidth: 345,
         borderRadius: 2,
-        border: '1px solid #c6d7d7',
+        border: `1px solid ${theme.palette.button.disabled}`,
         p: 2
       }}>
       <CardMedia
@@ -59,32 +63,38 @@ const ArticleCard: React.FC<Article> = ({ title, description, timeToRead, image,
         alt={title}
         sx={{ borderRadius: 1, mb: 1 }}
       />
-      <CardContent sx={{ p: 0 }}>
+      <CardContent
+        sx={{
+          p: 0,
+          '&:last-child': {
+            paddingBottom: 0
+          }
+        }}>
         <Typography
           gutterBottom
-          variant="h6"
+          variant="h3"
           component="div"
           sx={{
-            fontWeight: 590,
-            fontSize: '18px',
-            lineHeight: '23.4px',
             color: theme.palette.grey[600]
           }}>
           {title}
         </Typography>
         <Typography
           variant="body2"
-          color="text.secondary"
           sx={{
-            fontWeight: 400,
-            fontSize: '14px',
-            lineHeight: '18.2px',
             color: theme.palette.grey[400],
             mb: '12px'
           }}>
           {description}
         </Typography>
-        <Typography variant="caption" display="block" gutterBottom>
+        <Typography
+          variant="thirdText"
+          display="block"
+          gutterBottom
+          sx={{
+            color: theme.palette.primary.main,
+            mb: 0
+          }}>
           {timeToRead}
         </Typography>
       </CardContent>
@@ -92,20 +102,18 @@ const ArticleCard: React.FC<Article> = ({ title, description, timeToRead, image,
   );
 };
 
-const UsefulArticlesComponent: React.FC = () => {
+export const UsefulArticlesComponent: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ pt: '40px' }}>
+    <Box
+      sx={{
+        pt: '32px'
+      }}>
       <Typography
-        variant="h5"
+        variant="h2"
         gutterBottom
         sx={{
-          // pb: 2,
-          fontFamily: 'Roboto, sans-serif',
-          fontWeight: 590,
-          fontSize: '24px',
-          lineHeight: '31.2px',
           color: theme.palette.grey[600]
         }}>
         Корисні статті
@@ -115,19 +123,34 @@ const UsefulArticlesComponent: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 1
+          gap: 1,
+          pt: '24px'
         }}>
         {articles.map((article) => (
-          <ArticleCard key={article.id} {...article} />
+          <Box key={article.id}>
+            <ArticleCard {...article} />
+          </Box>
         ))}
       </Box>
-      <Box sx={{ textAlign: 'center', mt: 2 }}>
-        <Link href="/all-articles" variant="body1">
+      <Box sx={{ pt: 2 }}>
+        <Button
+          component={Link}
+          to="/all-articles"
+          variant="contained"
+          sx={{
+            width: '100%',
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.grey[50],
+            borderRadius: '8px',
+            height: '34px',
+            fontSize: '16px',
+            fontWeight: '600',
+            lineHeight: '24px',
+            textTransform: 'none'
+          }}>
           Всі статті
-        </Link>
+        </Button>
       </Box>
     </Box>
   );
 };
-
-export default UsefulArticlesComponent;
