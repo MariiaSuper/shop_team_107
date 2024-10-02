@@ -1,6 +1,6 @@
-import { CarouselComponent } from '../CarouselComponent';
+import { CarouselComponent } from '../../components/CarouselComponent';
 import { Box } from '@mui/material';
-import Catalog from '../Catalog/Catalog';
+import Catalog from '../../components/Catalog/Catalog';
 
 export const HomePage = () => {
   return (

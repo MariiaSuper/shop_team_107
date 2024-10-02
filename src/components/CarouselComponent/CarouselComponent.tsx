@@ -1,26 +1,47 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Carousel from './Carousel';
-import styles from './CarouselComponent.module.scss';
 
 export const CarouselComponent = () => {
   return (
-    <Box mt={2} gap={1} display="flex" flexDirection="column">
-      <div className={styles.line}>
+    <Box pt={2} gap={1} display="flex" flexDirection="column">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          width: '100%',
+          height: '20px',
+          gap: '4px',
+          cursor: 'pointer'
+        }}>
         <img
+          style={{ width: '16px', height: '16px' }}
           src="/icons/ElectroDefault.svg"
           alt="Електротехнічні рішення для вашого дому."
-          className="carouselIcon"
         />
-        <p className={styles.carouselDescription}>Електротехнічні рішення для вашого дому.</p>
-      </div>
-      <div className={styles.line}>
+        <Typography sx={{ textAlign: 'left' }} variant="thirdText">
+          Електротехнічні рішення для вашого дому.
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          width: '100%',
+          height: '20px',
+          gap: '4px',
+          cursor: 'pointer'
+        }}>
         <img
+          style={{ width: '16px', height: '16px' }}
           src="/icons/DeliveryTrack.svg"
           alt="Електротехнічні рішення для вашого дому."
-          className="carouselIcon"
         />
-        <p className={styles.carouselDescription}>Доставка по Україні.</p>
-      </div>
+        <Typography sx={{ textAlign: 'left' }} variant="thirdText">
+          Доставка по Україні.
+        </Typography>
+      </Box>
       <Carousel />
     </Box>
   );

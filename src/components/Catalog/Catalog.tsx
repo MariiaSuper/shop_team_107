@@ -4,22 +4,32 @@ import { Link } from 'react-router-dom';
 const ProductCatalog = () => {
   const theme = useTheme();
 
+  const buttonStyle = {
+    width: '140px',
+    height: '62px',
+    fontSize: '14px',
+    borderRadius: '8px',
+    fontWeight: 590,
+    lineHeight: '24px',
+    color: theme.palette.grey[500],
+    boxSizing: 'border-box',
+    border: `1px solid ${theme.palette.button.disabled}`,
+    textTransform: 'none',
+    p: 0
+  };
+
   return (
     <Box sx={{ pt: 5, textAlign: 'center' }}>
       {/* title */}
       <Typography
         sx={{
-          fontFamily: 'Roboto, sans-serif',
-          fontWeight: 590,
-          fontSize: '24px',
-          lineHeight: '31.2px',
           alignItems: 'center',
           textAlign: 'left',
-          ml: '0px',
+          ml: 0,
           mb: '16px',
           color: theme.palette.grey[500]
         }}
-        variant="h4"
+        variant="h2"
         gutterBottom>
         Наш каталог товарів
       </Typography>
@@ -27,89 +37,34 @@ const ProductCatalog = () => {
       {/* container for buttons */}
       <Box
         sx={{
+          width: '100%',
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'center',
           gap: 2
         }}>
         {/* the first row of buttons */}
-        <Box sx={{ display: 'flex', gap: 2 }}>
-          <Button
-            component={Link}
-            to="/generators"
-            variant="outlined"
-            sx={{
-              width: '140px',
-              height: '62px',
-              fontSize: '14px',
-              borderRadius: '8px',
-              fontFamily: 'Roboto, Helvetica, sans-serif',
-              fontWeight: 590,
-              lineHeight: '15.4px',
-              color: theme.palette.grey[500],
-              border: '1px solid #C6D7D7'
-            }}>
+        <Box sx={{ display: 'flex', gap: 1, boxSizing: 'border-box' }}>
+          <Button component={Link} to="/generators" variant="outlined" sx={buttonStyle}>
             Генератори
           </Button>
-          <Button
-            component={Link}
-            to="/batteries"
-            variant="outlined"
-            sx={{
-              width: '140px',
-              height: '62px',
-              fontSize: '14px',
-              borderRadius: '8px',
-              fontFamily: 'Roboto, Helvetica, sans-serif',
-              fontWeight: 590,
-              lineHeight: '15.4px',
-              color: theme.palette.grey[500],
-              border: '1px solid #C6D7D7'
-            }}>
+          <Button component={Link} to="/batteries" variant="outlined" sx={buttonStyle}>
             Аккумуляторні батареї
           </Button>
         </Box>
 
         {/* the second row of buttons */}
-        <Box sx={{ display: 'flex', gap: 2 }}>
-          <Button
-            component={Link}
-            to="/inverters"
-            variant="outlined"
-            sx={{
-              width: '140px',
-              height: '62px',
-              fontSize: '14px',
-              borderRadius: '8px',
-              fontFamily: 'Roboto, Helvetica, sans-serif',
-              fontWeight: 590,
-              lineHeight: '15.4px',
-              color: theme.palette.grey[500],
-              border: '1px solid #C6D7D7'
-            }}>
+        <Box sx={{ display: 'flex', gap: 1, boxSizing: 'border-box' }}>
+          <Button component={Link} to="/inverters" variant="outlined" sx={buttonStyle}>
             Інвертори
           </Button>
-          <Button
-            component={Link}
-            to="/others"
-            variant="outlined"
-            sx={{
-              width: '140px',
-              height: '62px',
-              fontSize: '14px',
-              borderRadius: '8px',
-              fontFamily: 'Roboto, Helvetica, sans-serif',
-              fontWeight: 590,
-              lineHeight: '15.4px',
-              color: theme.palette.grey[500],
-              border: '1px solid #C6D7D7'
-            }}>
+          <Button component={Link} to="/others" variant="outlined" sx={buttonStyle}>
             Інше
           </Button>
         </Box>
       </Box>
 
-      <Box sx={{ mt: 2 }}>
+      <Box sx={{ pt: 2 }}>
         <Button
           component={Link}
           to="/products"
@@ -122,7 +77,8 @@ const ProductCatalog = () => {
             height: '34px',
             fontSize: '16px',
             fontWeight: '590',
-            lineHeight: '17.6px'
+            lineHeight: '24px',
+            textTransform: 'none'
           }}>
           Переглянути товари
         </Button>
