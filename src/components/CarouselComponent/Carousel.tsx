@@ -3,16 +3,16 @@ import { Card, CardMedia, Box, useTheme } from '@mui/material';
 
 const items = [
   {
-    image: '/images/Banner1@2x.png'
+    image: '/images/sliderHomePage/Banner1@2x.png'
   },
   {
-    image: '/images/Banner2@2x.png'
+    image: '/images/sliderHomePage/Banner2@2x.png'
   },
   {
-    image: '/images/Banner3@2x.png'
+    image: '/images/sliderHomePage/Banner3@2x.png'
   },
   {
-    image: '/images/Banner4@2x.png'
+    image: '/images/sliderHomePage/Banner4@2x.png'
   }
 ];
 
@@ -20,7 +20,7 @@ function MobileCarousel() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ width: '100%' }} mt={2}>
+    <Box sx={{ width: '100%' }} pt={2}>
       <Carousel
         autoPlay={true}
         animation="slide"
@@ -42,12 +42,14 @@ function MobileCarousel() {
         }}
         activeIndicatorIconButtonProps={{
           style: {
-            color: theme.palette.primary.main
+            color: theme.palette.primary.main,
+            marginTop: 0
           }
         }}
         indicatorContainerProps={{
           style: {
-            marginTop: '8px',
+            paddingTop: '8px',
+            marginTop: 0,
             textAlign: 'center'
           }
         }}>
