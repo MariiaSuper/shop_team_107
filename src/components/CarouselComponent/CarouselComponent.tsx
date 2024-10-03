@@ -16,7 +16,7 @@ export const CarouselComponent = () => {
         }}>
         <img
           style={{ width: '16px', height: '16px' }}
-          src="/icons/ElectroDefault.svg"
+          src={`${process.env.PUBLIC_URL}/icons/ElectroDefault.svg`}
           alt="Електротехнічні рішення для вашого дому."
         />
         <Typography sx={{ textAlign: 'left' }} variant="thirdText">
@@ -35,7 +35,7 @@ export const CarouselComponent = () => {
         }}>
         <img
           style={{ width: '16px', height: '16px' }}
-          src="/icons/DeliveryTrack.svg"
+          src={`${process.env.PUBLIC_URL}/icons/DeliveryTrack.svg`}
           alt="Електротехнічні рішення для вашого дому."
         />
         <Typography sx={{ textAlign: 'left' }} variant="thirdText">
