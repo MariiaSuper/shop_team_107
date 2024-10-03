@@ -89,68 +89,57 @@ const theme = createTheme({
     h1: {
       fontWeight: 600,
       fontSize: '28px',
-      lineHeight: '42px',
-      color: '#3d3d3d'
+      lineHeight: '42px'
     },
     h2: {
       fontWeight: 600,
       fontSize: '24px',
-      lineHeight: '36px',
-      color: '#3d3d3d'
+      lineHeight: '36px'
     },
     h3: {
       fontWeight: 600,
       fontSize: '18px',
-      lineHeight: '27px',
-      color: '#3d3d3d'
+      lineHeight: '27px'
     },
     h4: {
       fontWeight: 600,
       fontSize: '14px',
-      lineHeight: '24px',
-      color: '#3d3d3d'
+      lineHeight: '24px'
     },
     body1: {
       fontWeight: 400,
       fontSize: '16px',
-      lineHeight: '24px',
-      color: '#3d3d3d'
+      lineHeight: '24px'
     },
     body2: {
       fontWeight: 400,
       fontSize: '14px',
-      lineHeight: '21px',
-      color: '#3d3d3d'
+      lineHeight: '21px'
     },
     thirdText: {
       fontWeight: 400,
       fontSize: '12px',
-      lineHeight: '18px',
-      color: '#3d3d3d'
+      lineHeight: '18px'
     },
     thirdText2: {
       fontWeight: 400,
       fontSize: '12px',
-      lineHeight: '12px',
-      color: '#3d3d3d'
+      lineHeight: '12px'
     },
     buttonText: {
       fontWeight: 600,
       fontSize: '16px',
-      lineHeight: '24px',
-      color: '#3d3d3d'
+      lineHeight: '24px'
     },
     tabBarRegular: {
       fontWeight: 600,
       fontSize: '10px',
-      lineHeight: '12px',
-      color: '#3d3d3d'
+      lineHeight: '12px'
     },
     tabBarBold: {
       fontWeight: 700,
       fontSize: '10px',
-      lineHeight: '15px',
-      color: '#3d3d3d'
+      lineHeight: '15px'
     }
   }
 });

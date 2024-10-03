@@ -3,16 +3,16 @@ import { Card, CardMedia, Box, useTheme } from '@mui/material';
 
 const items = [
   {
-    image: '/images/sliderHomePage/Banner1@2x.png'
+    image: '/images/sliderHomePage/SliderBanner1.jpg'
   },
   {
-    image: '/images/sliderHomePage/Banner2@2x.png'
+    image: '/images/sliderHomePage/SliderBanner2.jpg'
   },
   {
-    image: '/images/sliderHomePage/Banner3@2x.png'
+    image: '/images/sliderHomePage/SliderBanner3.jpg'
   },
   {
-    image: '/images/sliderHomePage/Banner4@2x.png'
+    image: '/images/sliderHomePage/SliderBanner4.jpg'
   }
 ];
 
