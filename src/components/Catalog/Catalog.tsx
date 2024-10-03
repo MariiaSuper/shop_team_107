@@ -45,20 +45,20 @@ const ProductCatalog = () => {
         }}>
         {/* the first row of buttons */}
         <Box sx={{ display: 'flex', gap: 1, boxSizing: 'border-box' }}>
-          <Button component={Link} to="/generators" variant="outlined" sx={buttonStyle}>
+          <Button component={Link} to="categories/generators" variant="outlined" sx={buttonStyle}>
             Генератори
           </Button>
-          <Button component={Link} to="/batteries" variant="outlined" sx={buttonStyle}>
+          <Button component={Link} to="categories/batteries" variant="outlined" sx={buttonStyle}>
             Аккумуляторні батареї
           </Button>
         </Box>
 
         {/* the second row of buttons */}
         <Box sx={{ display: 'flex', gap: 1, boxSizing: 'border-box' }}>
-          <Button component={Link} to="/inverters" variant="outlined" sx={buttonStyle}>
+          <Button component={Link} to="categories/inverters" variant="outlined" sx={buttonStyle}>
             Інвертори
           </Button>
-          <Button component={Link} to="/others" variant="outlined" sx={buttonStyle}>
+          <Button component={Link} to="categories/others" variant="outlined" sx={buttonStyle}>
             Інше
           </Button>
         </Box>
