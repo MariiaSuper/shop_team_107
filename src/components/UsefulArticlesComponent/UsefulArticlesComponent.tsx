@@ -19,7 +19,7 @@ const articles: Article[] = [
     description:
       'Правильний вибір акумулятора для генератора є важливим кроком, який гарантує надійну та ефективну роботу пристрою.',
     timeToRead: '5 хвилин на прочитання',
-    image: '/images/usefulArticlesImage1.png',
+    image: `${process.env.PUBLIC_URL}/images/usefulArticlesImage1.png`,
     route: '/article/1'
   },
   {
@@ -28,7 +28,7 @@ const articles: Article[] = [
     description:
       'Бензинові генератори — це ефективний спосіб забезпечити автономне електропостачання, але їх використання може стати досить витратним через вартість палива.',
     timeToRead: '10 хвилин на прочитання',
-    image: '/images/usefulArticlesImage2.png',
+    image: `${process.env.PUBLIC_URL}/images/usefulArticlesImage2.png`,
     route: '/article/2'
   },
   {
@@ -37,7 +37,7 @@ const articles: Article[] = [
     description:
       'Вибір генератора для дачі – важливе рішення, адже від цього залежить комфорт і можливістьповноцінного використання електроприладів під час відсутності централізованого електропостачання.',
     timeToRead: '7 хвилин на прочитання',
-    image: '/images/useFulArticlesImage3.png',
+    image: `${process.env.PUBLIC_URL}/images/useFulArticlesImage3.png`,
     route: '/article/3'
   }
 ];
