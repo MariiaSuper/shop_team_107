@@ -3,12 +3,17 @@ import App from './App';
 import { HomePage } from './pages/HomePage/HomePage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import { GeneratorsComponent } from './components/Catalog/GeneratorsComponent/GeneratorsComponent';
-import { AllProductsComponent } from './components/Catalog/AllProductsComponent/AllProductsComponent';
+import { GeneratorsComponent } from './pages/GeneratorsComponent/GeneratorsComponent';
+import { AllProductsComponent } from './pages/AllProductsComponent/AllProductsComponent';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { BatteriesComponent } from './components/Catalog/BatteriesComponent/BatteriesComponent';
-import { InvertersComponent } from './components/Catalog/InvertersComponent/InvertersComponent';
-import { OthersComponent } from './components/Catalog/OthersComponent/OthersComponent';
+import { BatteriesComponent } from './pages/BatteriesComponent/BatteriesComponent';
+import { InvertersComponent } from './pages/InvertersComponent/InvertersComponent';
+import { OthersComponent } from './pages/OthersComponent/OthersComponent';
+import { UsefulArticlesComponent } from './components/UsefulArticlesComponent/UsefulArticlesComponent';
+import { Article1 } from './pages/Article1/Article1';
+import { Article2 } from './pages/Article2/Article2';
+import { Article3 } from './pages/Article3/Article3';
+import { AllArticles } from './pages/AllArticles/AllArticles';
 import { OurCatalog } from './pages/OurCatalog/OurCatalog';
 
 export const Root = () => (
@@ -23,7 +28,11 @@ export const Root = () => (
           <Route path="categories/inverters" element={<InvertersComponent />} />
           <Route path="categories/others" element={<OthersComponent />} />
           <Route path="products" element={<AllProductsComponent />} />
-
+          <Route path="/article" element={<UsefulArticlesComponent />} />
+          <Route path="article/1" element={<Article1 />} />
+          <Route path="article/2" element={<Article2 />} />
+          <Route path="article/3" element={<Article3 />} />
+          <Route path="all-articles" element={<AllArticles />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

@@ -2,6 +2,7 @@ import { CarouselComponent } from '../../components/CarouselComponent';
 import { Box } from '@mui/material';
 import Catalog from '../../components/Catalog/Catalog';
 import { AboutUs } from '../../components/AboutUs';
+import { UsefulArticlesComponent } from '../../components/UsefulArticlesComponent/UsefulArticlesComponent';
 
 export const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ export const HomePage = () => {
       <CarouselComponent />
       <Catalog />
       <AboutUs />
+      <UsefulArticlesComponent />
     </Box>
   );
 };
