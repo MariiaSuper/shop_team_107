@@ -43,11 +43,15 @@ export const Article1: React.FC = () => {
           Правильний вибір акумулятора для генератора є важливим кроком, який гарантує надійну та
           ефективну роботу пристрою.
         </Typography>
-        <List>
+        <List sx={{ pt: 0, pb: 0 }}>
           <Typography variant="h3" sx={{ color: theme.palette.primary.main, mb: 2 }}>
             <ListItem sx={{ p: 0 }}>
               <ListItemText
-                primary="1. Визначте напругу акумулятора"
+                primary={
+                  <Typography sx={{ pb: 1 }}>
+                    <span>1. Визначте напругу акумулятора</span>
+                  </Typography>
+                }
                 secondary="Передусім необхідно знати, яку напругу підтримує ваш генератор. Найпоширеніші варіанти – це 12 В і 24 В акумулятори."
               />
             </ListItem>
@@ -56,7 +60,11 @@ export const Article1: React.FC = () => {
           <Typography variant="h3" sx={{ color: theme.palette.primary.main, mb: 2 }}>
             <ListItem sx={{ p: 0 }}>
               <ListItemText
-                primary="2. Ємність акумулятора"
+                primary={
+                  <Typography sx={{ pb: 1 }}>
+                    <span>2. Ємність акумулятора</span>
+                  </Typography>
+                }
                 secondary="Ємність акумулятора вимірюється в ампер-годинах (А·год) і визначає, скільки енергії він
                   може зберігати. Це ключовий показник для розуміння того, як довго акумулятор зможе
                   підтримувати генератор без підзарядки."
@@ -72,7 +80,11 @@ export const Article1: React.FC = () => {
             }}>
             <ListItem sx={{ p: 0 }}>
               <ListItemText
-                primary="3. Тип акумулятора"
+                primary={
+                  <Typography sx={{ pb: 1 }}>
+                    <span>3. Тип акумулятора</span>
+                  </Typography>
+                }
                 secondary={
                   <Typography variant="body2" component="span">
                     <span
@@ -109,7 +121,6 @@ export const Article1: React.FC = () => {
               />
             </ListItem>
           </Typography>
-
           <br />
 
           <Typography variant="body2" sx={{ color: theme.palette.primary.main }}>

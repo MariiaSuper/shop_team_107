@@ -4,7 +4,6 @@ import { Footer } from './components/Footer';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
 import '@mui/material/styles';
-
 declare module '@mui/material/styles' {
   interface Palette {
     button: {
