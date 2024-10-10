@@ -52,7 +52,8 @@ function MobileCarousel() {
             marginTop: 0,
             textAlign: 'center'
           }
-        }}>
+        }}
+      >
         {items.map((item, index) => (
           <Card key={index}>
             <CardMedia

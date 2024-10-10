@@ -1,7 +1,7 @@
 import { Button, Typography, Box, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const ProductCatalog = () => {
+export const Catalog = () => {
   const theme = useTheme();
 
   const buttonStyle = {
@@ -49,7 +49,7 @@ const ProductCatalog = () => {
             Генератори
           </Button>
           <Button component={Link} to="categories/batteries" variant="outlined" sx={buttonStyle}>
-            Аккумуляторні батареї
+            Акумуляторні батареї
           </Button>
         </Box>
 
@@ -86,5 +86,3 @@ const ProductCatalog = () => {
     </Box>
   );
 };
-
-export default ProductCatalog;

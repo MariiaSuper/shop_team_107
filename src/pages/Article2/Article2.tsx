@@ -4,14 +4,11 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Button,
-  Box,
   List,
   ListItem,
   ListItemText,
   useTheme
 } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 export const Article2: React.FC = () => {
   const theme = useTheme();
@@ -310,26 +307,6 @@ export const Article2: React.FC = () => {
             </ListItem>
           </Typography>
         </List>
-
-        <Box sx={{ pt: 2 }}>
-          <Button
-            component={Link}
-            to="/all-articles"
-            variant="contained"
-            sx={{
-              width: '100%',
-              backgroundColor: theme.palette.primary.main,
-              color: theme.palette.grey[50],
-              borderRadius: '8px',
-              height: '34px',
-              fontSize: '16px',
-              fontWeight: '600',
-              lineHeight: '24px',
-              textTransform: 'none'
-            }}>
-            Інші статті
-          </Button>
-        </Box>
       </CardContent>
     </Card>
   );
