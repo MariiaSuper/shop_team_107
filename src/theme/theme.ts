@@ -1,20 +1,13 @@
 import { createTheme } from '@mui/material';
-// import { PaletteColor } from '@mui/material';
-
-// declare module '@mui/material/styles' {
-//   interface Palette {
-//     button: PaletteColor;
-//   }
-//   interface PaletteOptions {
-//     button?: {
-//       hover?: string;
-//       pressed?: string;
-//       disabled?: string;
-//     };
-//   }
-// }
 
 declare module '@mui/material/styles' {
+  interface PaletteOptions {
+    button?: {
+      hover?: string;
+      pressed?: string;
+      disabled?: string;
+    };
+  }
   interface Palette {
     button: {
       hover: string;
@@ -85,7 +78,7 @@ export const theme = createTheme({
       '300': '#7d7d7d',
       '200': '#9d9d9d',
       '100': '#dcdcdc',
-      '50': 'fcfcfc'
+      '50': '#fcfcfc'
     },
     button: {
       hover: '#014343',

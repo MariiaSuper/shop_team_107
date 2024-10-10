@@ -1,86 +1,70 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import MenuOpenSharpIcon from '@mui/icons-material/MenuOpenSharp';
-import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { CloseOutlined, ZoomOut } from '@mui/icons-material';
-
+import { CloseOutlined } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { theme } from '../../theme/theme';
-import { SearchComponent } from '../Search';
 import { styles } from './styles';
-import { ButtonNames } from '../../types/enum/header';
 
 export const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const [activeButtons, setActiveButtons] = useState({
-    catalog: false,
-    search: false,
-    basket: false,
-    profile: false,
-    menu: false
-  });
-
-  useEffect(() => {
-    if (location.pathname.includes('/account/profile')) {
-      setActiveButtons({
-        catalog: false,
-        search: false,
-        basket: false,
-        profile: true,
-        menu: false
-      });
-    } else {
-      setActiveButtons({
-        catalog: false,
-        search: false,
-        basket: false,
-        profile: false,
-        menu: false
-      });
-    }
-  }, [location.pathname]);
-
-  const handleButtonClick = (buttonName: keyof typeof activeButtons) => {
-    if (buttonName === 'profile' && location.pathname.includes('/account/profile')) {
-      return;
-    }
-
-    setActiveButtons((prevState) => ({
-      ...prevState,
-      [buttonName]: !prevState[buttonName]
-    }));
+  // Mapping buttons to their paths
+  const buttonPaths = {
+    categories: '/categories',
+    basket: '/basket',
+    profile: '/profile',
+    menu: '/menu'
   };
 
-  const getButtonStyles = (isActive: boolean) => ({
+  const [activeButton, setActiveButton] = useState<string | null>(null);
+
+  useEffect(() => {
+    for (const [button, path] of Object.entries(buttonPaths)) {
+      if (location.pathname.startsWith(path)) {
+        setActiveButton(button);
+        return;
+      }
+    }
+    setActiveButton(null); // Reset active button when no path matches
+  }, [location.pathname]);
+
+  const handleButtonClick = (buttonName: keyof typeof buttonPaths) => {
+    const buttonPath = buttonPaths[buttonName];
+
+    if (activeButton === buttonName) {
+      navigate('/'); // Navigate to home if the button is active (i.e., close icon is clicked)
+    } else {
+      navigate(buttonPath); // Navigate to the button's respective page
+    }
+
+    setActiveButton(buttonName === activeButton ? null : buttonName); // Toggle active state
+  };
+
+  const getButtonStyles = (buttonName: string) => ({
     ...styles.button,
-    color: isActive ? theme.palette.secondary.main : theme.palette.grey[50]
+    color: activeButton === buttonName ? theme.palette.secondary.main : theme.palette.grey[50]
   });
 
   return (
     <AppBar
       position="sticky"
-      sx={{
-        padding: {
-          xs: '24px 16px'
-        }
-      }}
-    >
+      sx={{ px: 2, borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px' }}>
       <Toolbar
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          minHeight: '100%'
-        }}
-      >
+          height: '75px',
+          gap: '18px'
+        }}>
         <Button sx={styles.button} component={Link} to="/" aria-label="Go to home">
           <Box
             component="img"
-            src={`${process.env.PUBLIC_URL}/icons/Logo.svg`}
+            src={`${process.env.PUBLIC_URL}/icons/iconLogo.svg`}
             alt="Logo"
             sx={{
               objectFit: 'cover'
@@ -88,11 +72,8 @@ export const Header = () => {
           />
         </Button>
 
-        <Button
-          onClick={() => handleButtonClick(ButtonNames.Catalog)}
-          sx={getButtonStyles(activeButtons.catalog)}
-        >
-          {activeButtons.catalog ? (
+        <Button onClick={() => handleButtonClick('categories')} sx={getButtonStyles('categories')}>
+          {activeButton === 'categories' ? (
             <CloseOutlined sx={styles.icon} />
           ) : (
             <GridViewIcon sx={styles.icon} />
@@ -102,48 +83,31 @@ export const Header = () => {
           </Typography>
         </Button>
 
-        <Button
-          onClick={() => handleButtonClick(ButtonNames.Search)}
-          sx={getButtonStyles(activeButtons.search)}
-        >
-          {activeButtons.search ? (
-            <ZoomOut sx={styles.icon} />
+        <Button onClick={() => handleButtonClick('basket')} sx={getButtonStyles('basket')}>
+          {activeButton === 'basket' ? (
+            <CloseOutlined sx={styles.icon} />
           ) : (
-            <SearchTwoToneIcon sx={styles.icon} />
+            <ShoppingCartOutlinedIcon sx={styles.icon} />
           )}
-          <Typography variant="caption" sx={styles.iconText}>
-            Пошук
-          </Typography>
-        </Button>
-
-        <Button
-          onClick={() => handleButtonClick(ButtonNames.Basket)}
-          sx={getButtonStyles(activeButtons.basket)}
-        >
-          <ShoppingCartOutlinedIcon sx={styles.icon} />
           <Typography variant="caption" sx={styles.iconText}>
             Кошик
           </Typography>
         </Button>
 
-        <Button
-          component={Link}
-          to="/account/profile"
-          onClick={() => handleButtonClick(ButtonNames.Profile)}
-          sx={getButtonStyles(activeButtons.profile)}
-        >
-          <AccountCircleOutlinedIcon sx={styles.icon} />
+        <Button onClick={() => handleButtonClick('profile')} sx={getButtonStyles('profile')}>
+          {activeButton === 'profile' ? (
+            <CloseOutlined sx={styles.icon} />
+          ) : (
+            <AccountCircleOutlinedIcon sx={styles.icon} />
+          )}
           <Typography variant="caption" sx={styles.iconText}>
             Профіль
           </Typography>
         </Button>
 
-        <Button
-          onClick={() => handleButtonClick(ButtonNames.Menu)}
-          sx={getButtonStyles(activeButtons.menu)}
-        >
-          {activeButtons.menu ? (
-            <MenuOpenSharpIcon sx={styles.icon} />
+        <Button onClick={() => handleButtonClick('menu')} sx={getButtonStyles('menu')}>
+          {activeButton === 'menu' ? (
+            <CloseOutlined sx={styles.icon} />
           ) : (
             <MenuIcon sx={styles.icon} />
           )}
@@ -152,8 +116,6 @@ export const Header = () => {
           </Typography>
         </Button>
       </Toolbar>
-
-      {activeButtons.search && <SearchComponent />}
     </AppBar>
   );
 };
