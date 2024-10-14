@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-// import { createTheme } from '@mui/material';
 import '@mui/material/styles';
 // declare module '@mui/material/styles' {
 //   interface Palette {

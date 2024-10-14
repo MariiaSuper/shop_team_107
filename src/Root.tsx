@@ -27,6 +27,8 @@ import { DeliveryAndPayment } from './pages/DeliveryAndPayment/DeliveryAndPaymen
 import { Guarantee } from './pages/Guarantee/Guarantee';
 import { Contacts } from './pages/Contacts/Contacts';
 import { Favorites } from './pages/Favorites/Favorites';
+import { Oferta } from './pages/Oferta/Oferta';
+import { Confidential } from './pages/Confidential/Confidential';
 
 export const Root = () => (
   <Provider store={store}>
@@ -61,6 +63,8 @@ export const Root = () => (
             <Route path="delivery" element={<DeliveryAndPayment />} />
             <Route path="guarantee" element={<Guarantee />} />
             <Route path="contacts" element={<Contacts />} />
+            <Route path="oferta" element={<Oferta />} />
+            <Route path="confidential" element={<Confidential />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
