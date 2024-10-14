@@ -56,66 +56,70 @@ export const Header = () => {
   };
 
   return (
-    <AppBar
-      position="sticky"
-      sx={{ px: 2, borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px' }}>
-      <Toolbar
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          height: '75px',
-          gap: '18px'
-        }}>
-        <Button sx={styles.button} component={Link} to="/" aria-label="Go to home">
-          <Box
-            component="img"
-            src={`${process.env.PUBLIC_URL}/icons/iconLogo.svg`}
-            alt="Logo"
-            sx={{
-              objectFit: 'cover'
-            }}
-          />
-        </Button>
+    <>
+      <AppBar
+        position="sticky"
+        sx={{ px: 2, borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px' }}>
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            height: '75px',
+            gap: '18px'
+          }}>
+          <Button sx={styles.button} component={Link} to="/" aria-label="Go to home">
+            <Box
+              component="img"
+              src={`${process.env.PUBLIC_URL}/icons/iconLogo.svg`}
+              alt="Logo"
+              sx={{
+                objectFit: 'cover'
+              }}
+            />
+          </Button>
 
-        <Button onClick={() => handleButtonClick('categories')} sx={getButtonStyles('categories')}>
-          {activeButton === 'categories' ? (
-            <CloseOutlined sx={styles.icon} />
-          ) : (
-            <GridViewIcon sx={styles.icon} />
-          )}
-          <Typography variant="caption" sx={styles.iconText}>
-            Каталог
-          </Typography>
-        </Button>
+          <Button
+            onClick={() => handleButtonClick('categories')}
+            sx={getButtonStyles('categories')}>
+            {activeButton === 'categories' ? (
+              <CloseOutlined sx={styles.icon} />
+            ) : (
+              <GridViewIcon sx={styles.icon} />
+            )}
+            <Typography variant="caption" sx={styles.iconText}>
+              Каталог
+            </Typography>
+          </Button>
 
-        <Button onClick={() => handleButtonClick('basket')} sx={getButtonStyles('basket')}>
-          {activeButton === 'basket' ? (
-            <CloseOutlined sx={styles.icon} />
-          ) : (
-            <ShoppingCartOutlinedIcon sx={styles.icon} />
-          )}
-          <Typography variant="caption" sx={styles.iconText}>
-            Кошик
-          </Typography>
-        </Button>
+          <Button onClick={() => handleButtonClick('basket')} sx={getButtonStyles('basket')}>
+            {activeButton === 'basket' ? (
+              <CloseOutlined sx={styles.icon} />
+            ) : (
+              <ShoppingCartOutlinedIcon sx={styles.icon} />
+            )}
+            <Typography variant="caption" sx={styles.iconText}>
+              Кошик
+            </Typography>
+          </Button>
 
-        <Button onClick={() => handleButtonClick('profile')} sx={getButtonStyles('profile')}>
-          {activeButton === 'profile' ? (
-            <CloseOutlined sx={styles.icon} />
-          ) : (
-            <AccountCircleOutlinedIcon sx={styles.icon} />
-          )}
-          <Typography variant="caption" sx={styles.iconText}>
-            Профіль
-          </Typography>
-        </Button>
+          <Button onClick={() => handleButtonClick('profile')} sx={getButtonStyles('profile')}>
+            {activeButton === 'profile' ? (
+              <CloseOutlined sx={styles.icon} />
+            ) : (
+              <AccountCircleOutlinedIcon sx={styles.icon} />
+            )}
+            <Typography variant="caption" sx={styles.iconText}>
+              Профіль
+            </Typography>
+          </Button>
 
-        <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-          <MenuIcon />
-        </IconButton>
+          <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+            <MenuIcon />
+          </IconButton>
 
-        <Menu open={drawerOpen} onClose={toggleDrawer(false)} activeButton={activeButton} />
-      </Toolbar>
-    </AppBar>
+          <Menu open={drawerOpen} onClose={toggleDrawer(false)} activeButton={activeButton} />
+        </Toolbar>
+      </AppBar>
+    </>
   );
 };
