@@ -159,15 +159,15 @@ function App() {
       {}
       <Header />
       <Outlet />
-      {!isCategoriesPage ||
-        !isBasketPage ||
-        !isProfilePage ||
-        !isManufacturesPage ||
-        isDeliveryPage ||
-        !isGuarancePage ||
-        !isContactsPage ||
-        !isOfertaPage ||
-        (!isConfidentialPage && <Footer />)}
+      {!isCategoriesPage &&
+        !isBasketPage &&
+        !isProfilePage &&
+        !isManufacturesPage &&
+        !isDeliveryPage &&
+        !isGuarancePage &&
+        !isContactsPage &&
+        !isOfertaPage &&
+        !isConfidentialPage && <Footer />}
     </div>
   );
 }

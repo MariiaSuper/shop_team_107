@@ -164,20 +164,6 @@ export const Footer: React.FC = () => {
         </Box>
       </Box>
 
-      {/* Мова переключення */}
-      <Box
-        sx={{
-          marginTop: '20px',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '15px',
-          px: 2
-        }}>
-        <Typography sx={{ cursor: 'pointer' }}>Укр</Typography>
-        <Typography sx={{ cursor: 'pointer' }}>Рус</Typography>
-        <Typography sx={{ cursor: 'pointer' }}>Eng</Typography>
-      </Box>
-
       <Box sx={{ textAlign: 'center', marginTop: '20px', px: 3, pb: 2 }}>
         <Typography variant="thirdText" sx={{ color: theme.palette.primary.main }}>
           Всі права захищені магазином, 2024
