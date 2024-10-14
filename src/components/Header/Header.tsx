@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Toolbar, Typography, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import GridViewIcon from '@mui/icons-material/GridView';
@@ -8,20 +8,21 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { theme } from '../../theme/theme';
 import { styles } from './styles';
+import { Menu } from '../Menu';
 
 export const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   // Mapping buttons to their paths
   const buttonPaths = {
     categories: '/categories',
     basket: '/basket',
-    profile: '/profile',
-    menu: '/menu'
+    profile: '/profile'
   };
-
-  const [activeButton, setActiveButton] = useState<string | null>(null);
 
   useEffect(() => {
     for (const [button, path] of Object.entries(buttonPaths)) {
@@ -49,6 +50,10 @@ export const Header = () => {
     ...styles.button,
     color: activeButton === buttonName ? theme.palette.secondary.main : theme.palette.grey[50]
   });
+
+  const toggleDrawer = (open: boolean) => () => {
+    setDrawerOpen(open);
+  };
 
   return (
     <AppBar
@@ -105,16 +110,11 @@ export const Header = () => {
           </Typography>
         </Button>
 
-        <Button onClick={() => handleButtonClick('menu')} sx={getButtonStyles('menu')}>
-          {activeButton === 'menu' ? (
-            <CloseOutlined sx={styles.icon} />
-          ) : (
-            <MenuIcon sx={styles.icon} />
-          )}
-          <Typography variant="caption" sx={styles.iconText}>
-            Меню
-          </Typography>
-        </Button>
+        <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+          <MenuIcon />
+        </IconButton>
+
+        <Menu open={drawerOpen} onClose={toggleDrawer(false)} activeButton={activeButton} />
       </Toolbar>
     </AppBar>
   );

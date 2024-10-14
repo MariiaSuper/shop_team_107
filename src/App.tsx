@@ -74,7 +74,7 @@ import '@mui/material/styles';
 //       '300': '#7d7d7d',
 //       '200': '#9d9d9d',
 //       '100': '#dcdcdc',
-//       '50': 'fcfcfc'
+//       '50': '#fcfcfc'
 //     },
 //     button: {
 //       hover: '#014343',
