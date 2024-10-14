@@ -46,10 +46,10 @@ export const Root = () => (
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
             <Route path="categories" element={<OurCatalog />} />
-            <Route path="categories/generators" element={<GeneratorsComponent />} />
-            <Route path="categories/batteries" element={<BatteriesComponent />} />
-            <Route path="categories/inverters" element={<InvertersComponent />} />
-            <Route path="categories/others" element={<OthersComponent />} />
+            <Route path="/generators" element={<GeneratorsComponent />} />
+            <Route path="/batteries" element={<BatteriesComponent />} />
+            <Route path="/inverters" element={<InvertersComponent />} />
+            <Route path="/others" element={<OthersComponent />} />
             <Route path="products" element={<AllProductsComponent />} />
             {/* <Route path="/article" element={<UsefulArticlesComponent />} /> */}
             <Route path="article/1" element={<Article1 />} />

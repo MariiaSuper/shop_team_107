@@ -20,22 +20,22 @@ interface Category {
 const categories: Category[] = [
   {
     name: 'Генератори (електростанції)',
-    route: 'categories/generators',
+    route: '/generators',
     icon: <img src="/icons/iconForOurCatalog.jpg" alt="generators" />
   },
   {
     name: 'Акумуляторні батареї',
-    route: 'categories/batteries',
+    route: '/batteries',
     icon: <img src="/icons/iconForOurCatalog.jpg" alt="batteries" />
   },
   {
     name: 'Інвертори',
-    route: 'categories/inverters',
+    route: '/inverters',
     icon: <img src="/icons/iconForOurCatalog.jpg" alt="inverters" />
   },
   {
     name: 'Інше',
-    route: 'categories/others',
+    route: '/others',
     icon: <img src="/icons/iconForOurCatalog.jpg" alt="others" />
   }
 ];

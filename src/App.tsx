@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import '@mui/material/styles';
+import { useLocation } from 'react-router-dom';
 // declare module '@mui/material/styles' {
 //   interface Palette {
 //     button: {
@@ -142,11 +143,31 @@ import '@mui/material/styles';
 // });
 
 function App() {
+  const location = useLocation();
+
+  const isCategoriesPage = location.pathname.includes('categories');
+  const isBasketPage = location.pathname.includes('basket');
+  const isProfilePage = location.pathname.includes('profile');
+  const isManufacturesPage = location.pathname.includes('manufacturers');
+  const isDeliveryPage = location.pathname.includes('delivery');
+  const isGuarancePage = location.pathname.includes('guarantee');
+  const isContactsPage = location.pathname.includes('contacts');
+  const isOfertaPage = location.pathname.includes('oferta');
+  const isConfidentialPage = location.pathname.includes('confidential');
   return (
     <div className="App">
+      {}
       <Header />
       <Outlet />
-      <Footer />
+      {!isCategoriesPage ||
+        !isBasketPage ||
+        !isProfilePage ||
+        !isManufacturesPage ||
+        isDeliveryPage ||
+        !isGuarancePage ||
+        !isContactsPage ||
+        !isOfertaPage ||
+        (!isConfidentialPage && <Footer />)}
     </div>
   );
 }
