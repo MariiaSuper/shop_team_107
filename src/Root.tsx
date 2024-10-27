@@ -11,7 +11,6 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { BatteriesComponent } from './pages/BatteriesComponent/BatteriesComponent';
 import { InvertersComponent } from './pages/InvertersComponent/InvertersComponent';
 import { OthersComponent } from './pages/OthersComponent/OthersComponent';
-// import { UsefulArticlesComponent } from './components/UsefulArticlesComponent/UsefulArticlesComponent';
 import { Article1 } from './pages/Article1/Article1';
 import { Article2 } from './pages/Article2/Article2';
 import { Article3 } from './pages/Article3/Article3';
@@ -25,9 +24,7 @@ import { Profile } from './pages/Profile/Profile';
 import { Manufactures } from './pages/Manufactures/Manufactures';
 import { DeliveryAndPayment } from './pages/DeliveryAndPayment/DeliveryAndPayment';
 import { Guarantee } from './pages/Guarantee/Guarantee';
-import { Contacts } from './pages/Contacts/Contacts';
 import { Favorites } from './pages/Favorites/Favorites';
-import { Oferta } from './pages/Oferta/Oferta';
 import { Confidential } from './pages/Confidential/Confidential';
 
 export const Root = () => (
@@ -51,7 +48,6 @@ export const Root = () => (
             <Route path="/inverters" element={<InvertersComponent />} />
             <Route path="/others" element={<OthersComponent />} />
             <Route path="products" element={<AllProductsComponent />} />
-            {/* <Route path="/article" element={<UsefulArticlesComponent />} /> */}
             <Route path="article/1" element={<Article1 />} />
             <Route path="article/2" element={<Article2 />} />
             <Route path="article/3" element={<Article3 />} />
@@ -62,8 +58,6 @@ export const Root = () => (
             <Route path="manufacturers" element={<Manufactures />} />
             <Route path="delivery" element={<DeliveryAndPayment />} />
             <Route path="guarantee" element={<Guarantee />} />
-            <Route path="contacts" element={<Contacts />} />
-            <Route path="oferta" element={<Oferta />} />
             <Route path="confidential" element={<Confidential />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

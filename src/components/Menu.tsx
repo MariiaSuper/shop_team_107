@@ -29,8 +29,7 @@ interface MenuProps {
 const menuItems = [
   { text: 'Виробники', path: '/manufacturers' },
   { text: 'Доставка i оплата', path: '/delivery' },
-  { text: 'Гарантія', path: '/guarantee' },
-  { text: 'Контакти', path: '/contacts' }
+  { text: 'Гарантія', path: '/guarantee' }
 ];
 
 const contacts = [

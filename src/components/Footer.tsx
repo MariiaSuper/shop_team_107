@@ -103,24 +103,6 @@ export const Footer: React.FC = () => {
             <li>
               <Typography variant="thirdText">
                 <Link
-                  href="/contacts"
-                  sx={{ textDecoration: 'none', color: theme.palette.grey[400] }}>
-                  Контакти
-                </Link>
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="thirdText">
-                <Link
-                  href="/oferta"
-                  sx={{ textDecoration: 'none', color: theme.palette.grey[400] }}>
-                  Оферта
-                </Link>
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="thirdText">
-                <Link
                   href="/confidential"
                   sx={{ textDecoration: 'none', color: theme.palette.grey[400] }}>
                   Політика конфіденційності
@@ -130,7 +112,7 @@ export const Footer: React.FC = () => {
             <li>
               <Typography variant="thirdText">
                 <Link
-                  href="categories"
+                  href="/categories"
                   sx={{ textDecoration: 'none', color: theme.palette.grey[400] }}>
                   Всі категорії
                 </Link>
