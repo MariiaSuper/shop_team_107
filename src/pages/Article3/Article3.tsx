@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import {
-  Card,
+  Box,
   CardContent,
   CardMedia,
   Typography,
   List,
   ListItem,
   ListItemText,
-  useTheme
+  useTheme,
+  Button
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const Article3: React.FC = () => {
   const theme = useTheme();
@@ -18,7 +20,7 @@ export const Article3: React.FC = () => {
   }, []);
 
   return (
-    <Card sx={{ maxWidth: 345, margin: 'auto', pt: 3 }}>
+    <Box sx={{ maxWidth: 345, margin: 'auto', pt: 3 }}>
       <Typography
         gutterBottom
         variant="h2"
@@ -30,7 +32,7 @@ export const Article3: React.FC = () => {
         component="img"
         alt="Generator with battery"
         image={`${process.env.PUBLIC_URL}/images/useFulArticlesImage3.png`}
-        sx={{ p: 2, width: '288px', height: '220px' }}
+        sx={{ p: 2, width: '100%', height: '220px' }}
       />
       <CardContent sx={{ pb: 0 }}>
         <Typography variant="h3" component="div" sx={{ color: theme.palette.grey[600], mb: 2 }}>
@@ -175,7 +177,27 @@ export const Article3: React.FC = () => {
             </ListItem>
           </Typography>
         </List>
+
+        <Box sx={{ pt: 2 }}>
+          <Button
+            component={Link}
+            to="/"
+            variant="contained"
+            sx={{
+              width: '100%',
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.grey[50],
+              borderRadius: '8px',
+              height: '34px',
+              fontSize: '16px',
+              fontWeight: '600',
+              lineHeight: '24px',
+              textTransform: 'none'
+            }}>
+            На головну
+          </Button>
+        </Box>
       </CardContent>
-    </Card>
+    </Box>
   );
 };

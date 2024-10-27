@@ -150,7 +150,7 @@ function App() {
   const isProfilePage = location.pathname.includes('profile');
   const isManufacturesPage = location.pathname.includes('manufacturers');
   const isDeliveryPage = location.pathname.includes('delivery');
-  const isGuarancePage = location.pathname.includes('guarantee');
+  // const isGuarancePage = location.pathname.includes('guarantee');
   const isContactsPage = location.pathname.includes('contacts');
   const isOfertaPage = location.pathname.includes('oferta');
   const isConfidentialPage = location.pathname.includes('confidential');
@@ -164,7 +164,7 @@ function App() {
         !isProfilePage &&
         !isManufacturesPage &&
         !isDeliveryPage &&
-        !isGuarancePage &&
+        // !isGuarancePage &&
         !isContactsPage &&
         !isOfertaPage &&
         !isConfidentialPage && <Footer />}
