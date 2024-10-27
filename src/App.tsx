@@ -144,16 +144,13 @@ import { useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
-
   const isCategoriesPage = location.pathname.includes('categories');
   const isBasketPage = location.pathname.includes('basket');
   const isProfilePage = location.pathname.includes('profile');
   const isManufacturesPage = location.pathname.includes('manufacturers');
-  const isDeliveryPage = location.pathname.includes('delivery');
-  // const isGuarancePage = location.pathname.includes('guarantee');
   const isContactsPage = location.pathname.includes('contacts');
   const isOfertaPage = location.pathname.includes('oferta');
-  const isConfidentialPage = location.pathname.includes('confidential');
+
   return (
     <div className="App">
       {}
@@ -163,11 +160,8 @@ function App() {
         !isBasketPage &&
         !isProfilePage &&
         !isManufacturesPage &&
-        !isDeliveryPage &&
-        // !isGuarancePage &&
         !isContactsPage &&
-        !isOfertaPage &&
-        !isConfidentialPage && <Footer />}
+        !isOfertaPage && <Footer />}
     </div>
   );
 }
