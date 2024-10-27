@@ -40,7 +40,6 @@ const categories: Category[] = [
   }
 ];
 
-// Category list component
 export const OurCatalog: React.FC = () => {
   const navigate = useNavigate();
   const theme = useTheme();
@@ -50,7 +49,7 @@ export const OurCatalog: React.FC = () => {
   };
 
   return (
-    <Typography variant="body2">
+    <Typography variant="body2" sx={{ height: '100vh' }}>
       <List
         sx={{
           pt: 3,
